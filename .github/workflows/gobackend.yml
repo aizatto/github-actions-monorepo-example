@@ -1,0 +1,28 @@
+name: gobackend
+
+on: push
+# on:
+#   push:
+#     paths: "gobackend/*"
+
+defaults:
+  run:
+    working-directory: gobackend
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+      # https://github.com/actions/cache/blob/main/examples.md#go---modules
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/go-build
+            ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+
+      - run: go test ./...
