@@ -16,6 +16,7 @@ Thoughts:
   - This also means that `test` and `build` are both downloading dependencies at the same time.
 - Nice to have: see if the failures happen during download.
   - Though this could be figured out if examining the steps.
+- Having an `install`/`download` job adds a few more additional seconds to the runtime.
 - You decide what trade off you want.
 
 Footnotes:
