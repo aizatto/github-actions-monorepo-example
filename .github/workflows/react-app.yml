@@ -1,9 +1,10 @@
 name: react-app
 
-on: push
-# on:
-#   push:
-#     paths: "react-app/*"
+on:
+  push:
+    paths:
+      - "react-app/*"
+      - ".github/workflows/react-app.yml"
 
 defaults:
   run:

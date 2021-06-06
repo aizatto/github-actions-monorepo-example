@@ -1,9 +1,10 @@
 name: gobackend
 
-on: push
-# on:
-#   push:
-#     paths: "gobackend/*"
+on:
+  push:
+    paths:
+      - "gobackend/*"
+      - ".github/workflows/gobackend.yml"
 
 defaults:
   run:
